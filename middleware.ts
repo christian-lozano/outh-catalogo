@@ -11,7 +11,7 @@ export async function middleware(req: NextRequest) {
   const publicPaths = path === "/" || path === "/signup";
 
   if (publicPaths && token) {
-    return NextResponse.redirect(new URL("/dashboard", req.nextUrl));
+    return NextResponse.redirect(new URL("/fritzsport/pedidos", req.nextUrl));
   }
   if (!publicPaths && !token) {
     return NextResponse.redirect(new URL("/", req.nextUrl));
@@ -19,5 +19,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/signup", "/dashboard"],
+  matcher: ["/", "/signup", "/fritzsport/pedidos", "/fritzsport"],
 };

@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+iframe {
+  height: 100vh;
+  width: 100vw;
+}
+
+.test {
+  background-color: rebeccapurple;
+}
+@font-face {
+  font-family: 'Angkor';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Angkor'), url(http://fonts.gstatic.com/s/angkor/v8/DLpLgIS-8F10ecwKqCm95Q.ttf) format('truetype');
+}
