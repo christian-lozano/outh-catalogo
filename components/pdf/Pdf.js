@@ -2,7 +2,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import { Document, Text, Page, Image, View } from "@react-pdf/renderer";
 
 import PdfPage from "@/components/pdf/PdfPage";
-
+//add pdf
 export default function PDF({ items, catalogo }) {
   let productosCantidad = items.map((el) => {
     let productos = {
