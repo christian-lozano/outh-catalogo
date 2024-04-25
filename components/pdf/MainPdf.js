@@ -45,7 +45,7 @@ export default function MainPdf({ catalogo }) {
           }
         </PDFDownloadLink>
 
-        {/* <PDFViewer>
+        {/* <PDFViewer>s
           <PDF catalogo={catalogo} items={items} />
         </PDFViewer> */}
       </div>
