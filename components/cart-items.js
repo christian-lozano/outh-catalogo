@@ -6,7 +6,6 @@ import { urlForImage } from "@/sanity/lib/image";
 import { X } from "lucide-react";
 import { useCart } from "react-use-cart";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CartItemsEmpty } from "@/components/cart-items-empty";
 
@@ -28,10 +27,7 @@ export function CartItems() {
         <>
           {items.length === 0 && <CartItemsEmpty />}
 
-          <div
-            role="list"
-            className="divide-y divide-gray-200 border-y border-gray-200 dark:divide-gray-500 dark:border-gray-500 grid grid-cols-2"
-          >
+          <div className="divide-y divide-gray-200 border-y border-gray-200 dark:divide-gray-500 dark:border-gray-500 grid grid-cols-2">
             {items.slice(0, loadMore).map((el) => (
               <div key={"key"} className="flex py-6 sm:py-10 ">
                 <div className="shrink-0">
@@ -91,15 +87,13 @@ export function CartItems() {
                         value={1}
                       />
                       <div className=" right-0 top-0  ">
-                        <Button
+                        <button
                           onClick={() => removeItem(el.id)}
-                          variant="ghost"
-                          type="button"
                           className="-mr-2 inline-flex p-2"
                         >
                           <span className="sr-only">Remove</span>
                           <X className="h-5 w-5" aria-hidden="true" />
-                        </Button>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -139,9 +133,11 @@ export function CartItems() {
           </button>
         )}
       </div>
-      <div className="mt-5 flex justify-center">
-        {loadMore} de {items?.length} Productos
-      </div>
+      {clientState && (
+        <div className="mt-5 flex justify-center">
+          {loadMore} de {items?.length} Productos
+        </div>
+      )}
     </>
   );
 }

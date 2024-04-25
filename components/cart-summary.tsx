@@ -1,21 +1,18 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { Loader2 } from "lucide-react"
-import { useCart } from "react-use-cart"
-
-
-import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Loader2 } from "lucide-react";
+import { useCart } from "react-use-cart";
 
 export function CartSummary() {
   function onCheckout() {}
-  const { cartTotal } = useCart()
+  const { cartTotal } = useCart();
 
-  const [clientState, setClientState] = useState(false)
+  const [clientState, setClientState] = useState(false);
   useEffect(() => {
-    setClientState(true)
-  }, [])
+    setClientState(true);
+  }, []);
   return (
     <>
       {clientState && (
@@ -48,14 +45,14 @@ export function CartSummary() {
 
           <div className="mt-6">
             <Link href={"/pagar"}>
-              <Button className="w-full font-semibold">
+              <button className="w-full font-semibold">
                 {/* <Loader2 className="mr-2 h-4 w-4 animate-spin" /> */}
                 Pagar
-              </Button>
+              </button>
             </Link>
           </div>
         </section>
       )}
     </>
-  )
+  );
 }

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
+
 import { urlForImage } from "@/sanity/lib/image";
 import { useCart } from "react-use-cart";
-import { useToast } from "@/components/ui/use-toast";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+
 
 export default function Product({ products, generoSku = false }) {
-  const { toast } = useToast();
+
   const [stock, setStock] = useState();
   const { addItem } = useCart();
   const [cliente, setCliente] = useState(false);

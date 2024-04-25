@@ -5,7 +5,7 @@ import { SanityProduct } from "@/config/inventory";
 import { cn } from "@/lib/utils";
 import { ProductFilters } from "@/components/product-filters";
 import { ProductGrid } from "@/components/product-grid";
-import { ProductSort } from "@/components/product-sort";
+
 
 import { Metadata } from "next";
 
@@ -134,7 +134,7 @@ export default async function Page({ searchParams }: Props) {
             <span>Filtrar por:</span>
           </h1>
           {/* Product Sort */}
-          <ProductSort />
+          {/* <ProductSort /> */}
         </div>
       </div>
       <div>

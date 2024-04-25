@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+
 import { useCart } from "react-use-cart";
 export default function ExportAll({ products }) {
   const { addItem } = useCart();
@@ -38,12 +38,12 @@ export default function ExportAll({ products }) {
   };
   return (
     <div className="flex w-full justify-center items-center p-5">
-      <Button
-        className=" uppercase bg-black text-white"
+      <button
+        className=" uppercase bg-black text-white p-3 rounded-xl"
         onClick={addToCatalogo}
       >
         Agregar Todo
-      </Button>
+      </button>
     </div>
   );
 }

@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { Plus, XCircle } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-
 export function CartItemsEmpty() {
   return (
     <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border-2 border-dashed border-gray-300 dark:border-gray-800">
@@ -17,10 +15,10 @@ export function CartItemsEmpty() {
           Añade productos a tu Catalogo.
         </p>
         <Link href="/fritzsport/catalogo">
-          <Button size="sm" className="relative">
+          <button className="relative flex justify-around items-center">
             <Plus className="mr-2 h-4 w-4" />
             Agregar Productos
-          </Button>
+          </button>
         </Link>
       </div>
     </div>
