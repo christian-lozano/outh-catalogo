@@ -2,6 +2,7 @@ import { CartItems } from "@/components/cart-items";
 import { CartSummary } from "@/components/cart-summary";
 import "@/styles/globals.css";
 export default function Page() {
+  // asdasd
   return (
     <div>
       <main className="mx-auto max-w-2xl px-4  pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
