@@ -1,6 +1,7 @@
 import MoverPedido from "./MoverPedido";
 
 export default function VerPedidos({ productView }) {
+  console.log(productView);
   return (
     <div class="border-b-2 block md:flex cursor-text w-3/4 h-3/4  z-[999]">
       <div class="relative w-full md:w-5/5 p-4 sm:p-6 lg:p-8 bg-white shadow-md">
@@ -129,6 +130,32 @@ export default function VerPedidos({ productView }) {
                 />
               </div>
             )}
+          </div>
+
+          <div class="pb-4">
+            <label for="about" class="font-semibold text-gray-700 block pb-1">
+              Razon Social
+            </label>
+            <input
+              disabled
+              id="email"
+              class=" cursor-text border-[1px] uppercase font-bold border-gray-300  rounded-r px-4 py-2 w-full"
+              type="email"
+              value={productView.razon}
+            />
+          </div>
+
+          <div class="pb-4">
+            <label for="about" class="font-semibold text-gray-700 block pb-1">
+              Tipo de Entrega
+            </label>
+            <input
+              disabled
+              id="email"
+              class=" cursor-text border-[1px] font-bold uppercase border-gray-300  rounded-r px-4 py-2 w-full"
+              type="email"
+              value={productView.tipoEntrega}
+            />
           </div>
           <div class="pb-6">
             <label for="name" class="font-semibold text-gray-700 block pb-1">

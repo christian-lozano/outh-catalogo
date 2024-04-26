@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 import { urlForImage } from "@/sanity/lib/image";
 import { useCart } from "react-use-cart";
 
-
-export default function Product({ products, generoSku = false }) {
-
+export default function Product({ products, generoSku = false, tipoprecio }) {
   const [stock, setStock] = useState();
   const { addItem } = useCart();
   const [cliente, setCliente] = useState(false);
@@ -19,7 +17,7 @@ export default function Product({ products, generoSku = false }) {
   }, []);
 
   const addToCart = () => {
-    console.log(products);
+    console.log(tipoprecio);
     // toast({
     //   title: `${products.name})`,
     //   description: "Producto Agregado al Catalogo",
@@ -42,11 +40,17 @@ export default function Product({ products, generoSku = false }) {
       image: products.images ? products.images[0].asset?._ref : undefined,
       sku: products.sku,
       price: products.priceecommerce,
-      pricemayorista: products.pricemayorista,
+      pricemayorista:
+        tipoprecio === "emprendedor"
+          ? products.priceemprendedor
+          : products.pricemayorista,
+
+      tipoprecio: tipoprecio,
       slug: products.slug,
       genero: products.genero,
       marca: products.marca,
       categorias: products.categories,
+      tipo: products.tipo,
     });
   };
 
@@ -101,10 +105,17 @@ export default function Product({ products, generoSku = false }) {
             S/{products.priceecommerce}
           </span> */}
           <p className="mt-2 font-semibold">
-            Precio: S/
+            Precio Retail: S/
             {products.priceecommerce && products.priceecommerce.toFixed(0)}
           </p>
         </div>
+        <p className="mt-2 font-semibold">
+          Precio {tipoprecio === "emprendedor" ? "Emprendedor" : "Mayorista"}:
+          S/
+          {tipoprecio === "emprendedor"
+            ? products.priceemprendedor.toFixed(0)
+            : products.pricemayorista.toFixed(0)}
+        </p>
         <div className="w-full flex justify-center mt-3 bg-black  text-white">
           {cliente && (
             <button type="button" className="w-full p-3" onClick={addToCart}>

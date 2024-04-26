@@ -94,6 +94,14 @@ const filters = [
     ],
   },
   {
+    id: "tipoprecio",
+    name: "T. Venta",
+    options: [
+      { value: "emprendedor", label: "Emprendedor" },
+      { value: "mayorista", label: "Mayorista" },
+    ],
+  },
+  {
     id: "color",
     name: "Color",
     options: [

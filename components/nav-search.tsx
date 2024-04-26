@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+"use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { Input } from "@/components/ui/input";

@@ -12,9 +12,10 @@ import ExportAll from "./export-all/export-all";
 interface Props {
   products: SanityProduct[];
   generoSku: boolean;
+  tipoprecio: string | undefined;
 }
 
-export function ProductGrid({ products, generoSku }: Props) {
+export function ProductGrid({ products, generoSku, tipoprecio }: Props) {
   const articlesShown = 6;
   const [loadMore, setLoadMore] = useState(articlesShown);
   const showMoreArticles = () => {
@@ -35,10 +36,15 @@ export function ProductGrid({ products, generoSku }: Props) {
 
   return (
     <div className="flex flex-col">
-      <ExportAll products={products}></ExportAll>
+      <ExportAll products={products} tipoprecio={tipoprecio}></ExportAll>
       <div className=" grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8">
         {products.slice(0, loadMore).map((product, i) => (
-          <Product key={i} products={product} generoSku={generoSku} />
+          <Product
+            key={i}
+            products={product}
+            generoSku={generoSku}
+            tipoprecio={tipoprecio}
+          />
         ))}
       </div>
       <div className="flex justify-center">

@@ -58,9 +58,22 @@ export function CartItems() {
                       <div className="flex justify-between font-bold">
                         <h4 className="text-sm">sku: {el.sku}</h4>
                       </div>
-                      <p className="mt-1 text-sm font-medium">
-                        Precio: S/{el.price && el.price.toFixed(0)}
+                      <p className="mt-1 text-sm font-extrabold">
+                        Precio Retail: <br /> S/
+                        {el.price && el.price.toFixed(0)}
                       </p>
+                      {el.tipoprecio === "emprendedor" ? (
+                        <p className="mt-1 text-sm font-extrabold">
+                          Precio Emprendedor: S/
+                          {el.pricemayorista && el.pricemayorista.toFixed(0)}
+                        </p>
+                      ) : (
+                        <p className="mt-1 text-sm font-medium">
+                          Precio Mayorista: S/
+                          {el.pricemayorista && el.pricemayorista.toFixed(0)}
+                        </p>
+                      )}
+
                       <p className="mt-1 text-sm font-medium">
                         Categoria: {el.categorias ? el.categorias : ""}
                       </p>

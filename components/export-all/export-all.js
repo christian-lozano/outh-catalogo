@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useCart } from "react-use-cart";
-export default function ExportAll({ products }) {
+export default function ExportAll({ products, tipoprecio }) {
   const { addItem } = useCart();
   const addToCatalogo = () => {
     // toast({
@@ -17,22 +17,28 @@ export default function ExportAll({ products }) {
     //   ),
     // });
 
-    products.map((el) =>
+    products.map((products) =>
       addItem({
-        id: el._id,
-        sku: el.sku,
-        tallas: el.tallascatalogo,
-        name: el.name,
-        imagenes: el.imagescatalogo ? el.imagescatalogo : undefined,
-        title: el.name,
-        image: el.images ? el.images[0].asset?._ref : undefined,
-        sku: el.sku,
-        price: el.priceecommerce,
-        pricemayorista: el.pricemayorista,
-        slug: el.slug,
-        genero: el.genero,
-        marca: el.marca,
-        categorias: el.categories,
+        id: products._id,
+        sku: products.sku,
+        tallas: products.tallascatalogo,
+        name: products.name,
+        imagenes: products.imagescatalogo ? products.imagescatalogo : undefined,
+        title: products.name,
+        image: products.images ? products.images[0].asset?._ref : undefined,
+        sku: products.sku,
+        price: products.priceecommerce,
+        pricemayorista:
+          tipoprecio === "emprendedor"
+            ? products.priceemprendedor
+            : products.pricemayorista,
+
+        tipoprecio: tipoprecio,
+        slug: products.slug,
+        genero: products.genero,
+        marca: products.marca,
+        categorias: products.categories,
+        tipo: products.tipo,
       })
     );
   };

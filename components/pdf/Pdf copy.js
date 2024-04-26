@@ -12,12 +12,14 @@ export default function PDF({ items, catalogo }) {
       name: el.name,
       img: el.image,
       title: el.name,
+      imagecatalogoprincipal: el.imgcatalogomain,
       imagecatalogo: el.imagenes,
       sku: el.sku,
       price: el.price,
       pricemayorista: el.pricemayorista,
       slug: el.slug,
       genero: el.genero,
+      tipoprecio: el.tipoprecio,
       marca: el.marca,
       categoria: el.categories,
     };
@@ -34,7 +36,6 @@ export default function PDF({ items, catalogo }) {
           {
             imgPortadaGenero: catalogo.imghombre.asset._ref,
             genero: "hombre",
-            
           },
           {
             imgPortadaGenero: catalogo.imghombre.asset._ref,

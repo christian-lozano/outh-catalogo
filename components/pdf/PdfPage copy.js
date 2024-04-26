@@ -194,12 +194,7 @@ export default function PdfPage({ producto, catalogo }) {
                 />
 
                 <View>
-                  <Text>
-                    PRECIO {""}
-                    {producto.tipoprecio === "emprendedor"
-                      ? "EMPRENDEDOR"
-                      : "MAYORISTA"}
-                  </Text>
+                  <Text>PRECIO MAYORISTA</Text>
                 </View>
                 <Text style={styles.containerPrecioCardText}>
                   S/
@@ -214,31 +209,46 @@ export default function PdfPage({ producto, catalogo }) {
         <View
           style={{
             width: "100%",
-            // maxWidth: "1000px",
+            maxWidth: "1000px",
             height: "100%",
             // backgroundColor: "#04540",
             position: "absolute",
-            display: `flex`,
+            display: "flex",
             flexDirection: "row",
-            justifyContent: "center",
+            justifyContent: "space-around",
             alignItems: "center",
             // bottom: "-280px",
-            bottom: `-100px`,
+            bottom: `${producto.tipo === "ropa" ? "-100px" : "10px"}`,
 
             zIndex: "5",
           }}
         >
           <Image
             style={{
-              width: `400px`,
+              width: `${producto.tipo === "ropa" ? "400px" : "400px"}`,
+              height: "400px",
             }}
             src={
               producto.img
-                ? urlForImage(producto.img).url()
+                ? urlForImage(producto.imgcatalogomain).url()
                 : "http://via.placeholder.com/2000x2000"
             }
           />
+          <View>
+            <Image
+              style={{
+                width: `${producto.tipo === "ropa" ? "200px" : "200px"}`,
+                height: "200px",
+              }}
+              src={
+                producto.imagecatalogo
+                  ? urlForImage(producto.imagecatalogo[0]).url()
+                  : "http://via.placeholder.com/2000x2000"
+              }
+            />
+          </View>
         </View>
+
         {/* {producto.imagecatalogo && (
           <View style={styles.imagensContainer}>
             {producto.imagecatalogo.map((el) => (

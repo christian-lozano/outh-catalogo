@@ -1,7 +1,7 @@
 "use client";
 
 import PDF from "./Pdf";
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 
@@ -52,9 +52,9 @@ export default function MainPdf({ catalogo }) {
           </PDFDownloadLink>
         )}
 
-        {/* <PDFViewer>s
+        <PDFViewer>
           <PDF catalogo={catalogo} items={items} />
-        </PDFViewer> */}
+        </PDFViewer>
       </div>
     </>
   );

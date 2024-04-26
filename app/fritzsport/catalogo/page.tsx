@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 import { ProductFilters } from "@/components/product-filters";
 import { ProductGrid } from "@/components/product-grid";
 
-
 import { Metadata } from "next";
+import NavSearch from "@/components/nav-search";
 
 interface Props {
   searchParams: {
@@ -23,6 +23,7 @@ interface Props {
     search?: string;
     sku?: string;
     razonsocial?: string;
+    tipoprecio?: string;
   };
 }
 export const metadata: Metadata = {
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
   },
 };
 export default async function Page({ searchParams }: Props) {
+  const { tipoprecio } = searchParams;
   async function fetchNextPage() {
     const {
       date = "desc",
@@ -63,6 +65,7 @@ export default async function Page({ searchParams }: Props) {
       marca,
       tipo,
       razonsocial,
+      tipoprecio,
     } = searchParams;
 
     const priceOrder = price ? `| order(priceecommerce ${price})` : "";
@@ -120,6 +123,7 @@ export default async function Page({ searchParams }: Props) {
     return products;
   }
   const products = await fetchNextPage();
+
   // console.log(products.filter((el) => el.razonsocial === "fritzsport"));
 
   return (
@@ -135,6 +139,7 @@ export default async function Page({ searchParams }: Props) {
           </h1>
           {/* Product Sort */}
           {/* <ProductSort /> */}
+          <NavSearch></NavSearch>
         </div>
       </div>
       <div>
@@ -159,7 +164,11 @@ export default async function Page({ searchParams }: Props) {
                 <ProductFilters />
               </div>
             </div>
-            <ProductGrid products={products} generoSku={true} />
+            <ProductGrid
+              products={products}
+              tipoprecio={tipoprecio}
+              generoSku={true}
+            />
             {/* Product grid */}
           </section>
         </main>

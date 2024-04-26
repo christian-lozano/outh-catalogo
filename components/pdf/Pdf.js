@@ -19,6 +19,7 @@ export default function PDF({ items, catalogo }) {
       slug: el.slug,
       genero: el.genero,
       marca: el.marca,
+      tipoprecio: el.tipoprecio,
       categoria: el.categorias && el.categorias,
     };
 
