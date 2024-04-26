@@ -28,13 +28,16 @@ export default function NavPedidos() {
     },
   ];
   return (
-    <nav class="z-0 relative" x-data="{open:false,menu:false, lokasi:false}">
-      <div class="relative z-10 bg-white shadow">
-        <div class="max-w-full mx-auto px-2 sm:px-4 lg:px-8">
-          <div class="relative flex items-center justify-center h-16">
-            <div class="flex items-center px-2 lg:px-0">
-              <div class=" md:block lg:block lg:ml-2">
-                <div class="flex">
+    <nav
+      className="z-0 relative"
+      x-data="{open:false,menu:false, lokasi:false}"
+    >
+      <div className="relative z-10 bg-white shadow">
+        <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="relative flex items-center justify-center h-16">
+            <div className="flex items-center px-2 lg:px-0">
+              <div className=" md:block lg:block lg:ml-2">
+                <div className="flex">
                   {dataNav.map((el, i) => (
                     <Link
                       key={i}

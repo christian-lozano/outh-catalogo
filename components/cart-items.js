@@ -60,17 +60,17 @@ export function CartItems() {
                       </div>
                       <p className="mt-1 text-sm font-extrabold">
                         Precio Retail: <br /> S/
-                        {el.price && el.price.toFixed(0)}
+                        {el.price && el.price.toFixed(2)}
                       </p>
                       {el.tipoprecio === "emprendedor" ? (
                         <p className="mt-1 text-sm font-extrabold">
                           Precio Emprendedor: S/
-                          {el.pricemayorista && el.pricemayorista.toFixed(0)}
+                          {el.pricemayorista && el.pricemayorista.toFixed(2)}
                         </p>
                       ) : (
                         <p className="mt-1 text-sm font-medium">
                           Precio Mayorista: S/
-                          {el.pricemayorista && el.pricemayorista.toFixed(0)}
+                          {el.pricemayorista && el.pricemayorista.toFixed(2)}
                         </p>
                       )}
 
@@ -117,7 +117,7 @@ export function CartItems() {
                 </p> */}
                   <p className="mt-4 flex space-x-2 text-sm">
                     {/* <Clock className="h-5 w-5 shrink-0" aria-hidden="true" /> */}
-                    <span>Precio total: S/{el.itemTotal.toFixed(0)} </span>
+                    <span>Precio total: S/{el.itemTotal.toFixed(2)} </span>
                   </p>
                 </div>
               </div>

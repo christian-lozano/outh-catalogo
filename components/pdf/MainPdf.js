@@ -1,7 +1,7 @@
 "use client";
 
 import PDF from "./Pdf";
-import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useEffect, useState } from "react";
 import { useCart } from "react-use-cart";
 
@@ -23,11 +23,11 @@ export default function MainPdf({ catalogo }) {
             {({ loading, url, error, blob }) =>
               loading ? (
                 <div className="fixed top-0 w-[100vw] bg-white/70 h-[100vh] z-[999] flex justify-center items-center">
-                  <div class="flex items-center justify-center w-full h-full">
-                    <div class="flex justify-center items-center space-x-1 text-sm text-gray-700">
+                  <div className="flex items-center justify-center w-full h-full">
+                    <div className="flex justify-center items-center space-x-1 text-sm text-gray-700">
                       <svg
                         fill="none"
-                        class="w-6 h-6 animate-spin"
+                        className="w-6 h-6 animate-spin"
                         viewBox="0 0 32 32"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -51,10 +51,10 @@ export default function MainPdf({ catalogo }) {
             }
           </PDFDownloadLink>
         )}
-
+        {/* 
         <PDFViewer>
           <PDF catalogo={catalogo} items={items} />
-        </PDFViewer>
+        </PDFViewer> */}
       </div>
     </>
   );

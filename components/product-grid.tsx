@@ -6,7 +6,7 @@ import { XCircle } from "lucide-react";
 import { SanityProduct } from "@/config/inventory";
 
 import Product from "./product/product";
-import NavSearch from "./nav-search";
+
 import ExportAll from "./export-all/export-all";
 
 interface Props {

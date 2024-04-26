@@ -15,19 +15,19 @@ export default function Nav() {
     <div className="sticky top-0 z-50">
       {/* <!-- follow me on twitter @asad_codes --> */}
 
-      <div class="flex flex-wrap place-items-center overflow-x-hidden">
-        <section class="relative mx-auto">
+      <div className="flex flex-wrap place-items-center overflow-x-hidden">
+        <section className="relative mx-auto">
           {/* <!-- navbar --> */}
-          <nav class="flex justify-between bg-gray-900 text-white w-screen">
-            <div class="px-5 xl:px-12 py-6 flex justify-between w-full items-center">
-              <a class="text-3xl font-bold font-heading" href="#">
-                {/* <!-- <img class="h-9" src="logo.png" alt="logo"> --> */}
+          <nav className="flex justify-between bg-gray-900 text-white w-screen">
+            <div className="px-5 xl:px-12 py-6 flex justify-between w-full items-center">
+              <a className="text-3xl font-bold font-heading" href="#">
+                {/* <!-- <img className="h-9" src="logo.png" alt="logo"> --> */}
                 <svg
                   width="1273"
                   height="1273"
                   viewBox="0 0 1273 1273"
                   xmlns="http://www.w3.org/2000/svg"
-                  class=" fill-white w-20 h-20 xl:w-16 2xl:w-20"
+                  className=" fill-white w-20 h-20 xl:w-16 2xl:w-20"
                 >
                   <path d="M579.51 792.57C576.8 792.82 574.86 793.16 572.91 793.17C551.26 793.21 529.62 793.15 507.97 793.22C502.85 793.24 498.91 791.38 495.76 787.31C476.92 762.93 457.86 738.72 439.23 714.19C434.77 708.31 429.91 705.85 422.51 706.23C410.95 706.82 399.34 706.39 387.28 706.39C387.28 735.21 387.28 763.66 387.28 792.44C365.25 792.44 343.69 792.44 322.03 792.44C322.03 704.16 322.03 616.06 322.03 527.72C323.47 527.58 324.73 527.34 325.98 527.35C371.14 527.38 416.3 527.04 461.45 527.63C485.78 527.95 508.76 533.99 528.84 548.72C549.71 564.03 559.99 584.83 561.02 610.41C561.73 628.2 558.98 645.26 549.24 660.64C540.09 675.08 526.86 684.55 511.56 691.47C509 692.63 506.42 693.76 503.4 695.1C528.86 727.69 553.94 759.82 579.51 792.57ZM387.58 650.11C411.99 649.53 436.03 649.39 460.02 648.1C467.02 647.72 474.47 645.16 480.61 641.66C492.91 634.66 496.13 622.95 493.92 609.46C491.95 597.43 484.05 591.25 472.91 588.38C470.01 587.63 467.04 586.85 464.07 586.71C448.06 585.97 432.05 585.3 416.03 584.86C406.63 584.6 397.21 584.81 387.58 584.81C387.58 606.58 387.58 627.72 387.58 650.11Z"></path>
                   <path d="M1033.68 735.79C1083.53 735.79 1132.26 735.79 1181.24 735.79C1181.24 754.93 1181.24 773.79 1181.24 792.92C1101.29 792.92 1021.37 792.92 940.97 792.92C940.97 785.23 940.94 777.66 940.98 770.08C941 764.63 941.3 759.18 941.12 753.75C940.97 749.36 942.89 746.1 945.67 743.03C974.18 711.61 1002.66 680.18 1031.14 648.74C1049.23 628.77 1067.3 608.79 1085.37 588.8C1086.39 587.68 1087.3 586.46 1089.23 584.11C1085.15 584.11 1082.35 584.11 1079.55 584.11C1037.53 584.11 995.51 584.11 953.49 584.11C946.17 584.11 945.6 583.61 945.58 576.39C945.54 561.91 945.55 547.42 945.58 532.94C945.59 527.53 946.68 526.46 952.19 526.46C1027.19 526.5 1102.2 526.57 1177.2 526.52C1181.01 526.52 1182.09 527.67 1182.03 531.43C1181.89 540.16 1182.1 548.9 1182.39 557.62C1182.71 566.87 1179.61 574.83 1173.5 581.57C1155.67 601.19 1137.67 620.66 1119.83 640.28C1092.25 670.6 1064.75 700.99 1037.23 731.36C1036.22 732.48 1035.33 733.72 1033.68 735.79Z"></path>
@@ -54,24 +54,30 @@ export default function Nav() {
                 </svg>
               </a>
               {/* <!-- Nav Links --> */}
-              <ul class="hidden md:hidden xl:flex px-4 mx-auto font-semibold font-heading space-x-12 ">
-                {/* <li><Link class="hover:text-gray-200" href="/fritzsport">Home</Link></li>
-          <li><Link class="hover:text-gray-200" href="/fritzsport/productos">Productos</Link></li>
-          <li><Link class="hover:text-gray-200" href="/fritzsport/mujer">Mujer</Link></li>
-          <li><Link class="hover:text-gray-200" href="/fritzsport/hombre">Hombre</Link></li>
-          <li><Link class="hover:text-gray-200" href="/fritzsport/ninos">Niños</Link></li>
+              <ul className="hidden md:hidden xl:flex px-4 mx-auto font-semibold font-heading space-x-12 ">
+                {/* <li><Link className="hover:text-gray-200" href="/fritzsport">Home</Link></li>
+          <li><Link className="hover:text-gray-200" href="/fritzsport/productos">Productos</Link></li>
+          <li><Link className="hover:text-gray-200" href="/fritzsport/mujer">Mujer</Link></li>
+          <li><Link className="hover:text-gray-200" href="/fritzsport/hombre">Hombre</Link></li>
+          <li><Link className="hover:text-gray-200" href="/fritzsport/ninos">Niños</Link></li>
 
-          <li><Link class="hover:text-gray-200" href="/fritzsport/emprende">Emprende</Link></li>
-          <li><Link class="hover:text-gray-200" href="/fritzsport/nuestrastiendas">Nuestras Tiendas</Link></li> */}
+          <li><Link className="hover:text-gray-200" href="/fritzsport/emprende">Emprende</Link></li>
+          <li><Link className="hover:text-gray-200" href="/fritzsport/nuestrastiendas">Nuestras Tiendas</Link></li> */}
                 <li className="flex justify-around gap-x-10">
-                  <Link class="hover:text-gray-200" href="/fritzsport/pedidos">
+                  <Link
+                    className="hover:text-gray-200"
+                    href="/fritzsport/pedidos"
+                  >
                     Pedidos
                   </Link>
-                  <Link class="hover:text-gray-200" href="/fritzsport/catalogo">
+                  <Link
+                    className="hover:text-gray-200"
+                    href="/fritzsport/catalogo"
+                  >
                     Catalogo
                   </Link>
                   <Link
-                    class="hover:text-gray-200"
+                    className="hover:text-gray-200"
                     href="/fritzsport/catalogo-edit"
                   >
                     <div>
@@ -84,7 +90,7 @@ export default function Nav() {
                     </div>
                   </Link>
                   <Link
-                    class="hover:text-gray-200"
+                    className="hover:text-gray-200"
                     href="/fritzsport/catalogo-pdf"
                   >
                     Catalogo export PDF
@@ -106,60 +112,75 @@ export default function Nav() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
-                    class="w-5 h-5"
+                    className="w-5 h-5"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M6 18 18 6M6 6l12 12"
                     />
                   </svg>
                 </button>
                 <li>
-                  <Link class="hover:text-gray-400" href="/fritzsport">
+                  <Link className="hover:text-gray-400" href="/fritzsport">
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
-                    class="hover:text-gray-400"
+                    className="hover:text-gray-400"
                     href="/fritzsport/productos"
                   >
                     Productos
                   </Link>
                 </li>
                 <li>
-                  <Link class="hover:text-gray-400" href="/fritzsport/mujer">
+                  <Link
+                    className="hover:text-gray-400"
+                    href="/fritzsport/mujer"
+                  >
                     Mujer
                   </Link>
                 </li>
                 <li>
-                  <Link class="hover:text-gray-400" href="/fritzsport/hombre">
+                  <Link
+                    className="hover:text-gray-400"
+                    href="/fritzsport/hombre"
+                  >
                     Hombre
                   </Link>
                 </li>
                 <li>
-                  <Link class="hover:text-gray-400" href="/fritzsport/ninos">
+                  <Link
+                    className="hover:text-gray-400"
+                    href="/fritzsport/ninos"
+                  >
                     Niños
                   </Link>
                 </li>
                 <li>
-                  <Link class="hover:text-gray-400" href="/fritzsport/emprende">
+                  <Link
+                    className="hover:text-gray-400"
+                    href="/fritzsport/emprende"
+                  >
                     Emprende
                   </Link>
                 </li>
                 <li>
                   <Link
-                    class="hover:text-gray-400"
+                    className="hover:text-gray-400"
                     href="/fritzsport/nuestrastiendas"
                   >
                     Nuestras Tiendas
                   </Link>
                 </li>
                 <li>
-                  <Link class="hover:text-gray-400" href="/fritzsport/pedidos">
+                  <Link
+                    className="hover:text-gray-400"
+                    href="/fritzsport/pedidos"
+                  >
                     Pedidos
                   </Link>
                 </li>
@@ -167,58 +188,58 @@ export default function Nav() {
 
               <CerrarSession></CerrarSession>
               {/* <!-- Header Icons --> */}
-              {/* <div class="hidden xl:flex items-center space-x-5 items-center">
-          <a class="hover:text-gray-200" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              {/* <div className="hidden xl:flex items-center space-x-5 items-center">
+          <a className="hover:text-gray-200" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </a>
-          <a class="flex items-center hover:text-gray-200" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          <a className="flex items-center hover:text-gray-200" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
-            <span class="flex absolute -mt-5 ml-4">
-              <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+            <span className="flex absolute -mt-5 ml-4">
+              <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
                 </span>
               </span>
           </a>
      
-          <a class="flex items-center hover:text-gray-200" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <a className="flex items-center hover:text-gray-200" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
           </a>
           
         </div> */}
             </div>
             {/* <!-- Responsive navbar --> */}
-            <a class="xl:hidden flex mr-6 items-center" href="#">
-              {/* <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            <a className="xl:hidden flex mr-6 items-center" href="#">
+              {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg> */}
-              {/* <span class="flex absolute -mt-5 ml-4">
-          <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+              {/* <span className="flex absolute -mt-5 ml-4">
+          <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
           </span>
         </span> */}
             </a>
             <button
               onClick={() => setActiveNavigation(!activeNavigation)}
-              class="navbar-burger self-center mr-12 xl:hidden"
+              className="navbar-burger self-center mr-12 xl:hidden"
               href="#"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 hover:text-gray-200"
+                className="h-6 w-6 hover:text-gray-200"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
@@ -227,10 +248,10 @@ export default function Nav() {
         </section>
       </div>
       {/* <!-- Does this resource worth a follow? --> */}
-      {/* <div class="absolute bottom-0 right-0 mb-4 mr-4 z-10">
+      {/* <div className="absolute bottom-0 right-0 mb-4 mr-4 z-10">
     <div>
-        <a title="Follow me on twitter" href="https://www.twitter.com/asad_codes" target="_blank" class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
-            <img class="object-cover object-center w-full h-full rounded-full" src="https://www.imore.com/sites/imore.com/files/styles/large/public/field/image/2019/12/twitter-logo.jpg"/>
+        <a title="Follow me on twitter" href="https://www.twitter.com/asad_codes" target="_blank" className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+            <img className="object-cover object-center w-full h-full rounded-full" src="https://www.imore.com/sites/imore.com/files/styles/large/public/field/image/2019/12/twitter-logo.jpg"/>
         </a>
     </div>
 </div> */}

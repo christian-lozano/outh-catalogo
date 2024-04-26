@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import Link from "next/link"
-import { urlForImage } from "@/sanity/lib/image"
+import React, { useState } from "react";
+import Link from "next/link";
+import { urlForImage } from "@/sanity/lib/image";
 
 export default function ProductRelacionados({ products }) {
-  const precio = products.priceecommerce
+  const precio = products.priceecommerce;
 
-  const operation = (Number(products.descuento) / 100) * Number(precio)
-  const resultado = Number(precio) - operation
+  const operation = (Number(products.descuento) / 100) * Number(precio);
+  const resultado = Number(precio) - operation;
   return (
     <>
       <Link
@@ -42,7 +42,7 @@ export default function ProductRelacionados({ products }) {
           <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
             S/{products.priceecommerce}
           </span>
-          <p className="mt-2 font-semibold">S/{resultado.toFixed(0)} </p>
+          <p className="mt-2 font-semibold">S/{resultado.toFixed(2)} </p>
         </div>
         {/* <p className="mt-2 font-medium">S/{products.descuento}</p> */}
       </Link>
@@ -65,5 +65,5 @@ export default function ProductRelacionados({ products }) {
         </svg>
       </button> */}
     </>
-  )
+  );
 }

@@ -19,5 +19,17 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/signup", "/fritzsport/pedidos", "/fritzsport"],
+  matcher: [
+    "/",
+    "/signup",
+    "/fritzsport/pedidos",
+    "/fritzsport",
+    "/fritzsport/pedidos/pendientes",
+    "/fritzsport/pedidos/porentregar",
+    "/fritzsport/pedidos/entregado",
+    "/fritzsport/pedidos/devuelto",
+    "/fritzsport/catalogo",
+    "/fritzsport/catalogo-edit",
+    "/fritzsport/catalogo-pdf",
+  ],
 };

@@ -106,15 +106,15 @@ export default function Product({ products, generoSku = false, tipoprecio }) {
           </span> */}
           <p className="mt-2 font-semibold">
             Precio Retail: S/
-            {products.priceecommerce && products.priceecommerce.toFixed(0)}
+            {products.priceecommerce && products.priceecommerce.toFixed(2)}
           </p>
         </div>
         <p className="mt-2 font-semibold">
           Precio {tipoprecio === "emprendedor" ? "Emprendedor" : "Mayorista"}:
           S/
           {tipoprecio === "emprendedor"
-            ? products.priceemprendedor.toFixed(0)
-            : products.pricemayorista.toFixed(0)}
+            ? products.priceemprendedor.toFixed(2)
+            : products.pricemayorista.toFixed(2)}
         </p>
         <div className="w-full flex justify-center mt-3 bg-black  text-white">
           {cliente && (

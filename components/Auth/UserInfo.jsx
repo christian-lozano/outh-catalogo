@@ -27,19 +27,19 @@ export default function UserInfo() {
       </div>
     </div> */}
       <div className="overflow-x-hidden">
-        <nav class="bg-white border-b border-gray-200 fixed z-30 w-full ">
-          <div class="px-3 py-3 lg:px-5 lg:pl-3">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center justify-start">
+        <nav className="bg-white border-b border-gray-200 fixed z-30 w-full ">
+          <div className="px-3 py-3 lg:px-5 lg:pl-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center justify-start">
                 <button
                   id="toggleSidebarMobile"
                   aria-expanded="true"
                   aria-controls="sidebar"
-                  class="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
+                  className="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
                 >
                   <svg
                     id="toggleSidebarMobileHamburger"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ export default function UserInfo() {
                   </svg>
                   <svg
                     id="toggleSidebarMobileClose"
-                    class="w-6 h-6 hidden"
+                    className="w-6 h-6 hidden"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,28 +66,28 @@ export default function UserInfo() {
                 </button>
                 <a
                   href="#"
-                  class="text-xl font-bold flex items-center lg:ml-2.5"
+                  className="text-xl font-bold flex items-center lg:ml-2.5"
                 ></a>
               </div>
             </div>
           </div>
         </nav>
-        <div class="flex overflow-hidden bg-white ">
+        <div className="flex overflow-hidden bg-white ">
           <aside
             id="sidebar"
-            class="fixed hidden z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
+            className="fixed hidden z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
             aria-label="Sidebar"
           >
-            <div class="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
-              <div class="flex-1 flex flex-col pb-4 overflow-y-auto">
-                <div class="flex-1 px-3 bg-white divide-y space-y-1">
-                  <span class="self-center whitespace-nowrap flex w-full justify-center">
+            <div className="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
+              <div className="flex-1 flex flex-col pb-4 overflow-y-auto">
+                <div className="flex-1 px-3 bg-white divide-y space-y-1">
+                  <span className="self-center whitespace-nowrap flex w-full justify-center">
                     <svg
                       width="1273"
                       height="1273"
                       viewBox="0 0 1273 1273"
                       xmlns="http://www.w3.org/2000/svg"
-                      class=" fill-black w-24 h-24 xl:w-20 2xl:w-20  "
+                      className=" fill-black w-24 h-24 xl:w-20 2xl:w-20  "
                     >
                       <path d="M579.51 792.57C576.8 792.82 574.86 793.16 572.91 793.17C551.26 793.21 529.62 793.15 507.97 793.22C502.85 793.24 498.91 791.38 495.76 787.31C476.92 762.93 457.86 738.72 439.23 714.19C434.77 708.31 429.91 705.85 422.51 706.23C410.95 706.82 399.34 706.39 387.28 706.39C387.28 735.21 387.28 763.66 387.28 792.44C365.25 792.44 343.69 792.44 322.03 792.44C322.03 704.16 322.03 616.06 322.03 527.72C323.47 527.58 324.73 527.34 325.98 527.35C371.14 527.38 416.3 527.04 461.45 527.63C485.78 527.95 508.76 533.99 528.84 548.72C549.71 564.03 559.99 584.83 561.02 610.41C561.73 628.2 558.98 645.26 549.24 660.64C540.09 675.08 526.86 684.55 511.56 691.47C509 692.63 506.42 693.76 503.4 695.1C528.86 727.69 553.94 759.82 579.51 792.57ZM387.58 650.11C411.99 649.53 436.03 649.39 460.02 648.1C467.02 647.72 474.47 645.16 480.61 641.66C492.91 634.66 496.13 622.95 493.92 609.46C491.95 597.43 484.05 591.25 472.91 588.38C470.01 587.63 467.04 586.85 464.07 586.71C448.06 585.97 432.05 585.3 416.03 584.86C406.63 584.6 397.21 584.81 387.58 584.81C387.58 606.58 387.58 627.72 387.58 650.11Z"></path>
                       <path d="M1033.68 735.79C1083.53 735.79 1132.26 735.79 1181.24 735.79C1181.24 754.93 1181.24 773.79 1181.24 792.92C1101.29 792.92 1021.37 792.92 940.97 792.92C940.97 785.23 940.94 777.66 940.98 770.08C941 764.63 941.3 759.18 941.12 753.75C940.97 749.36 942.89 746.1 945.67 743.03C974.18 711.61 1002.66 680.18 1031.14 648.74C1049.23 628.77 1067.3 608.79 1085.37 588.8C1086.39 587.68 1087.3 586.46 1089.23 584.11C1085.15 584.11 1082.35 584.11 1079.55 584.11C1037.53 584.11 995.51 584.11 953.49 584.11C946.17 584.11 945.6 583.61 945.58 576.39C945.54 561.91 945.55 547.42 945.58 532.94C945.59 527.53 946.68 526.46 952.19 526.46C1027.19 526.5 1102.2 526.57 1177.2 526.52C1181.01 526.52 1182.09 527.67 1182.03 531.43C1181.89 540.16 1182.1 548.9 1182.39 557.62C1182.71 566.87 1179.61 574.83 1173.5 581.57C1155.67 601.19 1137.67 620.66 1119.83 640.28C1092.25 670.6 1064.75 700.99 1037.23 731.36C1036.22 732.48 1035.33 733.72 1033.68 735.79Z"></path>
@@ -117,16 +117,16 @@ export default function UserInfo() {
                   <div className="w-full flex justify-center">
                     <span className="font-bold"> {session?.user?.name}</span>
                   </div>
-                  <ul class="space-y-2 pb-2">
+                  <ul className="space-y-2 pb-2">
                     <li>
-                      <form action="#" method="GET" class="lg:hidden">
-                        <label for="mobile-search" class="sr-only">
+                      <form action="#" method="GET" className="lg:hidden">
+                        <label for="mobile-search" className="sr-only">
                           Search
                         </label>
-                        <div class="relative">
-                          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <div className="relative">
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg
-                              class="w-5 h-5 text-gray-500"
+                              className="w-5 h-5 text-gray-500"
                               fill="currentColor"
                               viewBox="0 0 20 20"
                               xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@ export default function UserInfo() {
                             type="text"
                             name="email"
                             id="mobile-search"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5"
                             placeholder="Search"
                           />
                         </div>
@@ -148,10 +148,10 @@ export default function UserInfo() {
                     <li>
                       <a
                         href="#"
-                        class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group"
+                        className="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group"
                       >
                         <svg
-                          class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
+                          className="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
@@ -159,14 +159,14 @@ export default function UserInfo() {
                           <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                           <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                         </svg>
-                        <span class="ml-3">Home</span>
+                        <span className="ml-3">Home</span>
                       </a>
                     </li>
                   </ul>
                   <div className="flex justify-center w-full">
                     <a
                       href="#"
-                      class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group  absolute bottom-2"
+                      className="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group  absolute bottom-2"
                     >
                       <button
                         onClick={() => signOut()}
@@ -195,23 +195,23 @@ export default function UserInfo() {
             </div>
           </aside>
           <div
-            class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10"
+            className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10"
             id="sidebarBackdrop"
           ></div>
 
           <div
             id="main-content"
-            class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64"
+            className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64"
           >
             <main>
-              <div class="pt-6 px-4">
-                <div class="grid grid-cols-1 2xl:grid-cols-1 xl:gap-4 my-4">
-                  <div class="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
-                    <div class="flow-root">
+              <div className="pt-6 px-4">
+                <div className="grid grid-cols-1 2xl:grid-cols-1 xl:gap-4 my-4">
+                  <div className="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
+                    <div className="flow-root">
                       <div className="mb-5">
                         <FormAddProduct></FormAddProduct>
                       </div>
-                      <ul role="list" class="divide-y divide-gray-200">
+                      <ul role="list" className="divide-y divide-gray-200">
                         <AllProducts></AllProducts>
                         {/* <Posts></Posts> */}
                       </ul>

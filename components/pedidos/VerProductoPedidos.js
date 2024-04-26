@@ -3,13 +3,13 @@ import MoverPedido from "./MoverPedido";
 export default function VerPedidos({ productView }) {
   console.log(productView);
   return (
-    <div class="border-b-2 block md:flex cursor-text w-3/4 h-3/4  z-[999]">
-      <div class="relative w-full md:w-5/5 p-4 sm:p-6 lg:p-8 bg-white shadow-md">
-        <div class="flex justify-between">
-          <span class="text-xl font-semibold block">Productos</span>
+    <div className="border-b-2 block md:flex cursor-text w-3/4 h-3/4  z-[999]">
+      <div className="relative w-full md:w-5/5 p-4 sm:p-6 lg:p-8 bg-white shadow-md">
+        <div className="flex justify-between">
+          <span className="text-xl font-semibold block">Productos</span>
         </div>
-        <span class="text-gray-600">Información de Productos</span>
-        <div class="w-full p-8 mx-2 flex flex-col overflow-y-scroll h-3/4 ">
+        <span className="text-gray-600">Información de Productos</span>
+        <div className="w-full p-8 mx-2 flex flex-col overflow-y-scroll h-3/4 ">
           {productView.productos.map((info) => (
             <div
               key={info.id}
@@ -53,9 +53,9 @@ export default function VerPedidos({ productView }) {
             </div>
           ))}
         </div>
-        <div class="flex justify-center w-full absolute bottom-3">
+        <div className="flex justify-center w-full absolute bottom-3">
           <div className="flex justify-around items-center w-full">
-            <span class="text-xl font-semibold block">
+            <span className="text-xl font-semibold block">
               <span className="text-gray-600 font-normal">Total:</span> S/
               {productView.cart_total}
             </span>
@@ -96,35 +96,38 @@ export default function VerPedidos({ productView }) {
         </div>
       </div>
 
-      <div class="w-full md:w-5/5 p-8 bg-white lg:ml-4 shadow-md">
-        <div class="rounded  shadow p-6 overflow-y-scroll h-full">
+      <div className="w-full md:w-5/5 p-8 bg-white lg:ml-4 shadow-md">
+        <div className="rounded  shadow p-6 overflow-y-scroll h-full">
           <div className="flex gap-1">
-            <div class="pb-6 w-full">
-              <label for="name" class="font-semibold text-gray-700 block pb-1">
+            <div className="pb-6 w-full">
+              <label
+                for="name"
+                className="font-semibold text-gray-700 block pb-1"
+              >
                 Código de Pago
               </label>
-              <div class="flex">
+              <div className="flex">
                 <input
                   disabled
                   id="username"
-                  class=" cursor-text border-[1px] border-gray-300  rounded-r px-4 py-2 w-full"
+                  className=" cursor-text border-[1px] border-gray-300  rounded-r px-4 py-2 w-full"
                   type="text"
                   value={productView.id_mercado_pago}
                 />
               </div>
             </div>
             {productView.comprobante === "Factura" && (
-              <div class="pb-4 w-full">
+              <div className="pb-4 w-full">
                 <label
                   for="about"
-                  class="font-semibold text-gray-700 block pb-1"
+                  className="font-semibold text-gray-700 block pb-1"
                 >
                   RUC
                 </label>
                 <input
                   disabled
                   id="email"
-                  class="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
+                  className="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
                   type="email"
                   value={productView.ruc}
                 />
@@ -132,177 +135,219 @@ export default function VerPedidos({ productView }) {
             )}
           </div>
 
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Razon Social
             </label>
             <input
               disabled
               id="email"
-              class=" cursor-text border-[1px] uppercase font-bold border-gray-300  rounded-r px-4 py-2 w-full"
+              className=" cursor-text border-[1px] uppercase font-bold border-gray-300  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.razon}
             />
           </div>
 
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Tipo de Entrega
             </label>
             <input
               disabled
               id="email"
-              class=" cursor-text border-[1px] font-bold uppercase border-gray-300  rounded-r px-4 py-2 w-full"
+              className=" cursor-text border-[1px] font-bold uppercase border-gray-300  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.tipoEntrega}
             />
           </div>
-          <div class="pb-6">
-            <label for="name" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-6">
+            <label
+              for="name"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Nombres
             </label>
-            <div class="flex">
+            <div className="flex">
               <input
                 disabled
                 id="username"
-                class=" cursor-text border-[1px] border-gray-300  rounded-r px-4 py-2 w-full"
+                className=" cursor-text border-[1px] border-gray-300  rounded-r px-4 py-2 w-full"
                 type="text"
                 value={productView.nombres}
               />
             </div>
           </div>
-          <div class="pb-6">
-            <label for="name" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-6">
+            <label
+              for="name"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Apellidos
             </label>
-            <div class="flex">
+            <div className="flex">
               <input
                 disabled
                 id="username"
-                class=" cursor-text border-[1px] border-gray-300  rounded-r px-4 py-2 w-full"
+                className=" cursor-text border-[1px] border-gray-300  rounded-r px-4 py-2 w-full"
                 type="text"
                 value={productView.apellidos}
               />
             </div>
           </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Documento de Identidad
             </label>
             <input
               disabled
               id="email"
-              class=" cursor-text border-[1px] border-gray-300  rounded-r px-4 py-2 w-full"
+              className=" cursor-text border-[1px] border-gray-300  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.documento}
             />
           </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Email
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300 cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300 cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.email}
             />
           </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Teléfono
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
-              value={productView.documento}
+              value={productView.telefono}
             />
           </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Departamento
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300   cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300   cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.departamento}
             />
           </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Provincia
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.provincia}
             />
           </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Distrito
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.distrito}
             />
           </div>
 
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Dirección
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.direccion}
             />
           </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Información Adicional
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.info_adicional}
             />
           </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Tipo de Comprobante
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.comprobante}
             />
           </div>
 
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1">
+          <div className="pb-4">
+            <label
+              for="about"
+              className="font-semibold text-gray-700 block pb-1"
+            >
               Monto Total
             </label>
             <input
               disabled
               id="email"
-              class="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
+              className="border-[1px] border-gray-300  cursor-text  rounded-r px-4 py-2 w-full"
               type="email"
               value={productView.cart_total}
             />

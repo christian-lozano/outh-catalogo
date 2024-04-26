@@ -27,7 +27,7 @@ export function CartSummary() {
           <dl className="mt-6 space-y-4">
             <div className="flex items-center justify-between">
               <dt className="text-sm">Subtotal</dt>
-              <dd className="text-sm font-medium">S/{cartTotal.toFixed(0)}</dd>
+              <dd className="text-sm font-medium">S/{cartTotal.toFixed(2)}</dd>
             </div>
             {/* <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
                 <dt className="flex items-center text-sm">
@@ -38,7 +38,7 @@ export function CartSummary() {
             <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
               <dt className="text-base font-medium">Total a Pagar</dt>
               <dd className="text-base font-medium">
-                S/{cartTotal.toFixed(0)}
+                S/{cartTotal.toFixed(2)}
               </dd>
             </div>
           </dl>
