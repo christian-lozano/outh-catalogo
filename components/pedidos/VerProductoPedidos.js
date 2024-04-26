@@ -1,7 +1,7 @@
 import MoverPedido from "./MoverPedido";
 
 export default function VerPedidos({ productView }) {
-  console.log(productView);
+
   return (
     <div className="border-b-2 block md:flex cursor-text w-3/4 h-3/4  z-[999]">
       <div className="relative w-full md:w-5/5 p-4 sm:p-6 lg:p-8 bg-white shadow-md">

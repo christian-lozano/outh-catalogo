@@ -17,7 +17,7 @@ export default function Product({ products, generoSku = false, tipoprecio }) {
   }, []);
 
   const addToCart = () => {
-    console.log(tipoprecio);
+  
     // toast({
     //   title: `${products.name})`,
     //   description: "Producto Agregado al Catalogo",
