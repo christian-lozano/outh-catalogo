@@ -89,6 +89,7 @@ export const catalogo = defineType({
               type: "image",
               validation: (rule) => rule.required(),
             },
+
             {
               name: "categorias",
               title: "Categorias",
@@ -97,7 +98,7 @@ export const catalogo = defineType({
                 {
                   title: "Categoría",
                   type: "object",
-                  name: "categorias",
+                  name: "categoria",
                   fields: [
                     {
                       title: "Marca",
@@ -114,19 +115,22 @@ export const catalogo = defineType({
                           { title: "Bolsos", value: "bolsos" },
                           { title: "Medias", value: "medias" },
                           { title: "Chimpunes", value: "chimpunes" },
+                          { title: "Peloteras", value: "peloteras" },
                           { title: "Plataforma", value: "plataforma" },
                           { title: "Originals", value: "originals" },
                           { title: "Camisetas", value: "camisetas" },
                           { title: "Toma todo", value: "tomatodos" },
+                          { title: "Medias", value: "medias" },
                           { title: "Buzos", value: "buzos" },
                           { title: "Escolar", value: "escolar" },
                           { title: "Pantalón", value: "pantalon" },
                           { title: "Gorras", value: "gorras" },
-                          { title: "Shorts", value: "shorts" },
+                          { title: "shorts", value: "shorts" },
                           { title: "Polos", value: "polos" },
                           { title: "Sandalias", value: "sandalias" },
                           { title: "Running", value: "running" },
-                          { title: "Poleras", value: "poleras" },
+                          { title: "Basquet", value: "Básquet" },
+                          { title: "Poleras", value: "Poleras" },
                         ], // <-- predefined values
                       },
                     },

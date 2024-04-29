@@ -20,7 +20,10 @@ export default function Nav() {
           {/* <!-- navbar --> */}
           <nav className="flex justify-between bg-gray-900 text-white w-screen">
             <div className="px-5 xl:px-12 py-6 flex justify-between w-full items-center">
-              <a className="text-3xl font-bold font-heading" href="#">
+              <Link
+                className="text-3xl font-bold font-heading"
+                href="/fritzsport/pedidos"
+              >
                 {/* <!-- <img className="h-9" src="logo.png" alt="logo"> --> */}
                 <svg
                   width="1273"
@@ -52,7 +55,7 @@ export default function Nav() {
                   <path d="M951.5 933.3C951.5 926.97 951.5 921 951.5 914.77C998.89 914.77 1046.08 914.77 1093.58 914.77C1093.58 920.87 1093.58 926.94 1093.58 933.3C1046.33 933.3 999.13 933.3 951.5 933.3Z"></path>
                   <path d="M154.17 933.41C154.17 926.95 154.17 920.98 154.17 914.76C201.27 914.76 248.19 914.76 295.29 914.76C295.29 921.05 295.29 927.14 295.29 933.41C248.19 933.41 201.36 933.41 154.17 933.41Z"></path>
                 </svg>
-              </a>
+              </Link>
               {/* <!-- Nav Links --> */}
               <ul className="hidden md:hidden xl:flex px-4 mx-auto font-semibold font-heading space-x-12 ">
                 {/* <li><Link className="hover:text-gray-200" href="/fritzsport">Home</Link></li>
@@ -98,10 +101,10 @@ export default function Nav() {
                 </li>
               </ul>
               <ul
-                class={`flex flex-col gap-y-6 justify-start py-10 w-[30%]  top-0 bg-white h-full ${
+                class={`flex flex-col gap-y-6 justify-start py-10 w-[50%]  top-0 bg-white h-full ${
                   activeNavigation
                     ? "transition-all delay-100 right-[0%]"
-                    : "transition-all delay-100 right-[-30%]"
+                    : "transition-all delay-100 right-[-50%]"
                 }  text-black fixed md:flex px-4 mx-auto font-semibold font-heading`}
               >
                 <button
@@ -124,64 +127,35 @@ export default function Nav() {
                   </svg>
                 </button>
                 <li>
-                  <Link className="hover:text-gray-400" href="/fritzsport">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="hover:text-gray-400"
-                    href="/fritzsport/productos"
-                  >
-                    Productos
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="hover:text-gray-400"
-                    href="/fritzsport/mujer"
-                  >
-                    Mujer
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="hover:text-gray-400"
-                    href="/fritzsport/hombre"
-                  >
-                    Hombre
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="hover:text-gray-400"
-                    href="/fritzsport/ninos"
-                  >
-                    Niños
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="hover:text-gray-400"
-                    href="/fritzsport/emprende"
-                  >
-                    Emprende
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="hover:text-gray-400"
-                    href="/fritzsport/nuestrastiendas"
-                  >
-                    Nuestras Tiendas
-                  </Link>
-                </li>
-                <li>
                   <Link
                     className="hover:text-gray-400"
                     href="/fritzsport/pedidos"
                   >
                     Pedidos
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="hover:text-gray-400"
+                    href="/fritzsport/catalogo"
+                  >
+                    Catalogo
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="hover:text-gray-400"
+                    href="/fritzsport/catalogo-edit"
+                  >
+                    Editar Catalogo
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="hover:text-gray-400"
+                    href="/fritzsport/catalogo-pdf"
+                  >
+                    Descargar Catalogo
                   </Link>
                 </li>
               </ul>

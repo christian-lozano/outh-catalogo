@@ -6,7 +6,7 @@ export default function Page() {
     <>
       <div>
         {" "}
-        <div className="sticky top-0 bg-black w-full z-50">
+        <div className="sticky top-0 bg-black w-full">
           <TituloCart />
         </div>
         <main className="mx-auto max-w-2xl px-4   sm:px-6 lg:max-w-7xl lg:px-8">
