@@ -17,40 +17,15 @@ export default function Product({ products, generoSku = false, tipoprecio }) {
   }, []);
 
   const addToCart = () => {
-  
-    // toast({
-    //   title: `${products.name})`,
-    //   description: "Producto Agregado al Catalogo",
-    //   action: (
-    //     <Link href={"/catalogo"}>
-    //       <Button variant={"link"} className="gap-x-5 whitespace-nowrap">
-    //         <span>Ver Catalogo Editable</span>
-    //         <ArrowRight className="h-5 w-5" />
-    //       </Button>
-    //     </Link>
-    //   ),
-    // });
     addItem({
       id: products._id,
-      sku: products.sku,
-      tallas: products.tallascatalogo,
-      name: products.name,
-      imagenes: products.imagescatalogo ? products.imagescatalogo : undefined,
-      title: products.name,
-      image: products.images ? products.images[0].asset?._ref : undefined,
-      sku: products.sku,
-      price: products.priceecommerce,
+      price: products.price,
+      products,
+      tipoprecio: tipoprecio,
       pricemayorista:
         tipoprecio === "emprendedor"
           ? products.priceemprendedor
           : products.pricemayorista,
-
-      tipoprecio: tipoprecio,
-      slug: products.slug,
-      genero: products.genero,
-      marca: products.marca,
-      categorias: products.categories,
-      tipo: products.tipo,
     });
   };
 
@@ -113,13 +88,22 @@ export default function Product({ products, generoSku = false, tipoprecio }) {
           Precio {tipoprecio === "emprendedor" ? "Emprendedor" : "Mayorista"}:
           S/
           {tipoprecio === "emprendedor"
-            ? products.priceemprendedor.toFixed(2)
-            : products.pricemayorista.toFixed(2)}
+            ? products.priceemprendedor&& products.priceemprendedor.toFixed(2)
+            : products.pricemayorista && products.pricemayorista.toFixed(2)}
         </p>
-        <div className="w-full flex justify-center mt-3 bg-black  text-white">
+        <div
+          className={`w-full flex justify-center mt-3 bg-black ${
+            products.stock <= 0 ? "bg-slate-700" : "bg-black"
+          } text-white`}
+        >
           {cliente && (
-            <button type="button" className="w-full p-3" onClick={addToCart}>
-              Agregar al Catalogo
+            <button
+              type="button"
+              className="w-full p-3"
+              disabled={products.stock <= 0}
+              onClick={addToCart}
+            >
+              {products.stock <= 0 ? "Agotado" : "Agregar al Catalogo"}
             </button>
           )}
         </div>

@@ -133,6 +133,10 @@ export const product = defineType({
           { title: "Sandalias", value: "sandalias" },
           { title: "Running", value: "running" },
           { title: "Poleras", value: "poleras" },
+          { title: "Tenis", value: "tenis" },
+          { title: "Training ", value: "training" },
+          
+          
         ], // <-- predefined values
       },
     },
@@ -218,6 +222,21 @@ export const product = defineType({
       },
       initialValue: {
         fritzsport: false,
+      },
+    },
+        {
+      title: "Tipo de Producto",
+      name: "tipoproducto",
+      type: "string",
+      validation: (rule) => rule.required(),
+      options: {
+        list: [
+          { title: "Catalogo", value: "catalogo" },
+          { title: "Web", value: "web" }
+        ], // <-- predefined values
+      },
+      initialValue: {
+        catalogo: false,
       },
     },
 

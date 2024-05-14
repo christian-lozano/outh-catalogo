@@ -9,7 +9,7 @@ export function CartItemsEmpty() {
       <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">
         <XCircle className="h-10 w-10 text-muted-foreground" />
         <h3 className="mt-4 text-lg font-semibold">
-          No se agregaron productos
+          No se encontraron Productos en el Catalogo
         </h3>
         <p className="mb-4 mt-2 text-sm text-muted-foreground">
           Añade productos a tu Catalogo.

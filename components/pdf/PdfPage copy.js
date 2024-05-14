@@ -180,7 +180,9 @@ export default function PdfPage({ producto, catalogo }) {
                   <Text>PRECIO RETAIL</Text>
                 </View>
                 <Text style={styles.containerPrecioCardText}>
-                  S/{producto.price && producto.price.toFixed(2)}
+                  S/
+                  {producto.priceecommerce &&
+                    producto.priceecommerce.toFixed(2)}
                 </Text>
               </View>
               <View style={styles.containerPrecioCard}>
@@ -209,44 +211,30 @@ export default function PdfPage({ producto, catalogo }) {
         <View
           style={{
             width: "100%",
-            maxWidth: "1000px",
+            // maxWidth: "1000px",
             height: "100%",
             // backgroundColor: "#04540",
             position: "absolute",
-            display: "flex",
+            display: `flex`,
             flexDirection: "row",
-            justifyContent: "space-around",
+            justifyContent: "center",
             alignItems: "center",
             // bottom: "-280px",
-            bottom: `${producto.tipo === "ropa" ? "-100px" : "10px"}`,
+            bottom: `-100px`,
 
             zIndex: "5",
           }}
         >
           <Image
             style={{
-              width: `${producto.tipo === "ropa" ? "400px" : "400px"}`,
-              height: "400px",
+              width: `400px`,
             }}
             src={
-              producto.img
-                ? urlForImage(producto.imgcatalogomain).url()
+              producto.images
+                ? urlForImage(producto.images[0].asset._ref).url()
                 : "http://via.placeholder.com/2000x2000"
             }
           />
-          <View>
-            <Image
-              style={{
-                width: `${producto.tipo === "ropa" ? "200px" : "200px"}`,
-                height: "200px",
-              }}
-              src={
-                producto.imagecatalogo
-                  ? urlForImage(producto.imagecatalogo[0]).url()
-                  : "http://via.placeholder.com/2000x2000"
-              }
-            />
-          </View>
         </View>
 
         {/* {producto.imagecatalogo && (

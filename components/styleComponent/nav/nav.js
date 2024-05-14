@@ -96,7 +96,19 @@ export default function Nav() {
                     className="hover:text-gray-200"
                     href="/fritzsport/catalogo-pdf"
                   >
-                    Catalogo export PDF
+                    Catalogo PDF
+                  </Link>
+                  <Link
+                    className="hover:text-gray-200"
+                    href="/fritzsport/catalogo-pdf-cliente"
+                  >
+                    Catalogo PDF Cliente
+                  </Link>
+                  <Link
+                    className="hover:text-gray-200"
+                    href="/fritzsport/catalogo-excel"
+                  >
+                    Catalogo EXCEL
                   </Link>
                 </li>
               </ul>

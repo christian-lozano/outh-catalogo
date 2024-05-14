@@ -1,26 +1,27 @@
 import { urlForImage } from "@/sanity/lib/image";
-import { Document, Text, Page, Image, View } from "@react-pdf/renderer";
+import { Document, Page, Image } from "@react-pdf/renderer";
 
 import PdfPage from "@/components/pdf/PdfPage";
 //add pdf
-export default function PDF({ items, catalogo }) {
+export default function PDF({ items, catalogo, cliente }) {
   let productosCantidad = items.map((el) => {
     let productos = {
       id: el.id,
-      sku: el.sku,
-      tallas: el.tallas,
-      name: el.name,
-      img: el.image,
-      title: el.name,
-      imagecatalogo: el.imagenes,
-      sku: el.sku,
-      price: el.price,
+      sku: el.products.sku,
+      tallascatalogo: el.products.tallascatalogo,
+      name: el.products.name,
+      images: el.products.images,
+      tipo: el.products.tipo,
+      imagecatalogo: el.products.imagescatalogo,
+      imgcatalogomain: el.products.imgcatalogomain,
+      sku: el.products.sku,
+      priceecommerce: el.products.priceecommerce,
       pricemayorista: el.pricemayorista,
-      slug: el.slug,
-      genero: el.genero,
-      marca: el.marca,
+      slug: el.products.slug,
+      genero: el.products.genero,
+      marca: el.products.marca,
       tipoprecio: el.tipoprecio,
-      categoria: el.categorias && el.categorias,
+      categoria: el.products.categories && el.products.categories,
     };
 
     return productos;
@@ -28,9 +29,7 @@ export default function PDF({ items, catalogo }) {
 
   let dat = catalogo.catalogo.map((el) => ({
     marca: el.marca,
-    imgheader: el.imgheader,
-    imgfooter: el.imgfooter,
-    imgprice: el.imgprice,
+    imgfondo: el.imgfondo,
     imagenPortada: el.imgmarca.asset._ref,
 
     generos: [
@@ -126,6 +125,7 @@ export default function PDF({ items, catalogo }) {
                                   .map((el) => (
                                     <>
                                       <PdfPage
+                                        cliente={cliente}
                                         catalogo={marca}
                                         key={el.id}
                                         producto={el}

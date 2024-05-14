@@ -20,14 +20,13 @@ const filters = [
       { value: "accesorios", label: "accesorios" },
     ],
   },
-
   {
     id: "razonsocial",
     name: "Razon S.",
     options: [
-      { label: "F. Sport", value: "fritzsport" },
-      { label: "F. Duran", value: "fritzduran" },
-      { label: "Alexander", value: "alexanderskate" },
+      { label: "F.Sport", value: "fritzsport"},
+      { label: "F.Duran", value: "fritzduran"},
+      { label: "Alexander", value: "alexanderskate"},
     ],
   },
 
@@ -99,6 +98,14 @@ const filters = [
     options: [
       { value: "emprendedor", label: "Emprendedor" },
       { value: "mayorista", label: "Mayorista" },
+    ],
+  },
+  {
+    id: "tipoproducto",
+    name: "Producto", 
+    options: [
+      { value: "web", label: "Web" },
+      { value: "catalogo", label: "Catalogo" },
     ],
   },
   {

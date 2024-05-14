@@ -1,3 +1,7 @@
+export const fetchCache = "force-no-store";
+export const revalidate = 0; // seconds
+export const dynamic = "force-dynamic";
+
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 
@@ -22,6 +26,7 @@ interface Props {
     genero?: string;
     search?: string;
     sku?: string;
+    tipoproducto?: string;
     razonsocial?: string;
     tipoprecio?: string;
   };
@@ -58,6 +63,7 @@ export default async function Page({ searchParams }: Props) {
       price,
       priceecommerce,
       color,
+      tipoproducto,
       category,
       size,
       search,
@@ -76,6 +82,10 @@ export default async function Page({ searchParams }: Props) {
 
     const productFilter = `_type == "product"`;
     const colorFilter = color ? `&& color match "${color}"` : "";
+    const tipoProducto = tipoproducto
+      ? `&& tipoproducto match "${tipoproducto}"`
+      : "";
+
     const tipoFilter = tipo ? `&& tipo match "${tipo}"` : "";
     const marcaFilter = marca ? `&& marca match "${marca}"` : "";
 
@@ -90,7 +100,7 @@ export default async function Page({ searchParams }: Props) {
       ? `&& name match "${search}" || sku match "${search}"|| genero match "${search}"|| marca match "${search}"|| tipo match "${search}"|| category match "${search}"|| color match "${search}"`
       : "";
 
-    const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}${generoFilter}${tipoFilter}${marcaFilter}${razonSocialFilter}]`;
+    const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}${generoFilter}${tipoFilter}${marcaFilter}${razonSocialFilter}${tipoProducto}]`;
 
     // await seedSanityData()
 
@@ -116,6 +126,8 @@ export default async function Page({ searchParams }: Props) {
       tallascatalogo,
       razonsocial,
       categories,
+      tipoproducto,
+      stock,
       "slug":slug.current
     } `
     );

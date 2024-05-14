@@ -3,6 +3,8 @@ import React from "react";
 import { useCart } from "react-use-cart";
 export default function ExportAll({ products, tipoprecio }) {
   const { addItem } = useCart();
+
+
   const addToCatalogo = () => {
     // toast({
     //   title: `${products.name})`,
@@ -16,31 +18,20 @@ export default function ExportAll({ products, tipoprecio }) {
     //     </Link>
     //   ),
     // });
-
-    products.map((products) =>
-      addItem({
-        id: products._id,
-        sku: products.sku,
-        tallas: products.tallascatalogo,
-        name: products.name,
-        imagenes: products.imagescatalogo ? products.imagescatalogo : undefined,
-        title: products.name,
-        image: products.images ? products.images[0].asset?._ref : undefined,
-        sku: products.sku,
-        price: products.priceecommerce,
-        pricemayorista:
-          tipoprecio === "emprendedor"
-            ? products.priceemprendedor
-            : products.pricemayorista,
-
-        tipoprecio: tipoprecio,
-        slug: products.slug,
-        genero: products.genero,
-        marca: products.marca,
-        categorias: products.categories,
-        tipo: products.tipo,
-      })
-    );
+    products
+      .filter((product) => product.stock > 0)
+      .map((products) =>
+        addItem({
+          id: products._id,
+          price: products.price,
+          products,
+          tipoprecio: tipoprecio,
+          pricemayorista:
+            tipoprecio === "emprendedor"
+              ? products.priceemprendedor
+              : products.pricemayorista,
+        })
+      );
   };
   return (
     <div className="flex w-full justify-center items-center p-5">

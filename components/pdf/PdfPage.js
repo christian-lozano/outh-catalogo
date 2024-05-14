@@ -3,6 +3,7 @@ import { Text, Page, StyleSheet, Image, View, Font } from "@react-pdf/renderer";
 // import { client } from "@/sanity/lib/client";
 // import { groq } from "next-sanity";
 import { urlForImage } from "@/sanity/lib/image";
+import { useEffect, useState } from "react";
 
 Font.register({
   family: "Anton",
@@ -15,260 +16,510 @@ Font.register({
       src: "https://fonts.gstatic.com/s/anton/v25/1Ptgg87LROyAm0K08i4gS7lu.ttf",
       fontStyle: "italic",
     },
-    // {
-    //   src: "http://fonts.gstatic.com/s/antic/v19/TuGfUVB8XY5DRaZLodgzydtk.ttf",
-    //   fontWeight: "normal",
-    //   fontStyle: "italic",
-    // },
   ],
 });
-const styles = StyleSheet.create({
-  page: {
-    width: "100vw",
-    height: "100vh",
-    fontFamily: "Anton",
-    fontStyle: "italic",
-    fontWeight: "400",
-    margin: 0,
-    padding: 0,
-  },
-  title: {
-    fontSize: 24,
-    textAlign: "center",
-  },
-  section: {
-    width: "100vw",
-    height: "100vh",
-    // display: "flex",
-    // flexDirection: "column",
-  },
-  parragraph: {
-    fontSize: 12,
-    textAlign: "justify",
-    lineHeight: 1.5,
-  },
-  pageNumber: {
-    position: "absolute",
-    fontSize: 12,
-    bottom: 30,
-    left: 0,
-    right: 0,
-    textAlign: "center",
-    color: "grey",
-  },
-  imagen: {
-    width: "100vw",
-    height: "750px",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    backgroundColor: "#fff",
-  },
-  imagensContainer: {
-    width: "100vw",
-    height: "150px",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    backgroundColor: "#fff",
-  },
-  imagenSub: {
-    width: "100px",
-    height: "100px",
-    backgroundColor: "#fff",
-    borderRadius: "50%",
-  },
-  container: {
-    // backgroundColor: "#5054",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100vw",
-    height: "100%",
-  },
-  containerSub: {
-    padding: "5px",
-    // position: "absolute",
-    // right: "0",
-    display: "flex",
-    flexDirection: "column",
-    justifyItems: "space-between",
-    alignItems: "center",
-    width: "78%",
-    height: "100%",
-  },
-  containerTitle: {
-    fontSize: "25px",
-    textAlign: "center",
-  },
-  containerCodigoTallas: {
-    marginTop: "5px",
-    width: "100%",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  containerCodigoTallasText: {
-    width: "100%",
-    fontSize: "20px",
-    textAlign: "center",
-  },
-  containerPrecio: {
-    width: "100%",
-    fontSize: "20px",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  containerPrecioCard: {
-    marginTop: "10px",
-    width: "49%",
-    height: "100%",
-    fontSize: "20px",
-    display: "flex",
+export default function PdfPage({ producto, catalogo, cliente }) {
+  console.log(catalogo);
+  const [marca, setMarca] = useState(
+    "https://cdn.sanity.io/images/ibvmpbc1/production/4a5cdee84967d0d4fa665fcde4263e8128a52909-196x196.png"
+  );
 
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    fontWeight: "bold",
-    padding: "5px",
-  },
-  containerPrecioCardText: {
-    fontWeight: "900",
-  },
-});
-export default function PdfPage({ producto, catalogo }) {
+  useEffect(() => {
+    switch (producto.marca) {
+      case "adidas":
+        setMarca(
+          "https://cdn.sanity.io/images/ibvmpbc1/production/ee995528aa127d0552dd5316aa8847ffe79adc8b-196x196.png"
+          // "https://cdn.sanity.io/images/ibvmpbc1/production/cd1b361ec671d423bb0a230d9cd835e3d6a9846b-196x196.png "
+        );
+        break;
+      case "nike":
+        setMarca(
+          "https://cdn.sanity.io/images/ibvmpbc1/production/c4f4c571a1e591fa12e147037f7b4fcf33dea577-196x196.png"
+        );
+        break;
+
+      case "puma":
+        setMarca(
+          "https://cdn.sanity.io/images/ibvmpbc1/production/1fedf9b4cf21a09455a9f4682f1f3a3e8363eaf0-196x196.png"
+        );
+        break;
+
+      case "reebok":
+        setMarca(
+          "https://cdn.sanity.io/images/ibvmpbc1/production/cd1b361ec671d423bb0a230d9cd835e3d6a9846b-196x196.png"
+        );
+        break;
+
+      case "cat":
+        setMarca(
+          "https://cdn.sanity.io/images/ibvmpbc1/production/dfec7f2c3b0955688ff05e7c771ec2aabd783447-196x196.png"
+        );
+        break;
+
+      case "joma":
+        setMarca(
+          "https://cdn.sanity.io/images/ibvmpbc1/production/635fcf2b7a9a4419d5df7ad015b54ae53db8f93e-196x196.png"
+        );
+        break;
+
+      case "fritzsport":
+        setMarca(
+          "https://cdn.sanity.io/images/ibvmpbc1/production/4a5cdee84967d0d4fa665fcde4263e8128a52909-196x196.png"
+        );
+        break;
+
+      default:
+        setMarca(
+          "https://cdn.sanity.io/images/ibvmpbc1/production/4a5cdee84967d0d4fa665fcde4263e8128a52909-196x196.png"
+        );
+        break;
+    }
+  }, []);
+
   // const catalogo = await client.fetch(groq`*[_type == "catalogo"]`);
   return (
-    <Page style={styles.page}>
-      <View style={styles.section}>
-        <Image
+    <Page
+      wrap={false}
+      style={{
+        fontFamily: "Anton",
+        marginTop: "0px",
+        fontSize: "14px",
+        fontStyle: "regular",
+        fontWeight: "200",
+        margin: 0,
+        padding: 0,
+        height: "100vh",
+        // backgroundColor: "red",
+      }}
+    >
+      <Image
+        style={{
+          position: "relative",
+          height: "100vh",
+          marginTop: "0px",
+        }}
+        src={
+          catalogo.imgfondo
+            ? urlForImage(catalogo.imgfondo.asset._ref).url()
+            : undefined
+        }
+      />
+      <View
+        fixed
+        style={{
+          width: "100vw",
+          height: "98vh",
+          position: "absolute",
+          marginTop: "0px",
+        }}
+      >
+        {/* /*---------------------------------*/
+        /* logo ,Nombre , sku*/
+        /*---------------------------------*/}
+        <View
           style={{
-            height: "180px",
+            top: "0px",
+            // position: "absolute",
+            width: "100%",
+
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
           }}
-          src={
-            catalogo.imgheader
-              ? urlForImage(catalogo.imgheader.asset._ref).url()
-              : undefined
-          }
-        />
-        <View style={styles.container}>
-          <View style={styles.containerSub}>
-            <Text style={styles.containerTitle}>{producto.name}</Text>
-            <View style={styles.containerCodigoTallas}>
-              <View style={styles.containerCodigoTallasText}>
-                <Text style={styles.containerCodigoTallasText}>
-                  CÓDIGO: {producto.sku}
-                </Text>
-              </View>
-              <View style={styles.containerCodigoTallasText}>
-                <Text>TALLAS: {producto.tallas}</Text>
-              </View>
+        >
+          <View
+            style={{
+              width: "100%",
+              height: "75px",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+
+              backgroundColor: "black",
+            }}
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "flex-start",
+                paddingLeft: "35px",
+              }}
+            >
+              {!cliente && (
+                <Image
+                  style={{
+                    height: "45px",
+                  }}
+                  src={
+                    "https://cdn.sanity.io/images/ibvmpbc1/production/a1fb6fde2d9ceb5cc909ba12cc794708e5702b6e-1042x678.png"
+                  }
+                />
+              )}
             </View>
-            <View style={styles.containerPrecio}>
-              <View style={styles.containerPrecioCard}>
-                <Image
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    position: "absolute",
-                  }}
-                  src={urlForImage(catalogo.imgprice.asset._ref).url()}
-                />
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "10px",
+                  color: "white",
+                  borderRadius: "5px",
+                }}
+              >
+                {producto.name}
+              </Text>
+            </View>
 
-                <View>
-                  <Text>PRECIO RETAIL</Text>
-                </View>
-                <Text style={styles.containerPrecioCardText}>
-                  S/{producto.price && producto.price.toFixed(2)}
-                </Text>
-              </View>
-              <View style={styles.containerPrecioCard}>
-                <Image
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    position: "absolute",
-                  }}
-                  src={urlForImage(catalogo.imgprice.asset._ref).url()}
-                />
-
-                <View>
-                  <Text>
-                    PRECIO {""}
-                    {producto.tipoprecio === "emprendedor"
-                      ? "EMPRENDEDOR"
-                      : "MAYORISTA"}
-                  </Text>
-                </View>
-                <Text style={styles.containerPrecioCardText}>
-                  S/
-                  {producto.pricemayorista &&
-                    producto.pricemayorista.toFixed(2)}
-                </Text>
-              </View>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "10px",
+                  color: "white",
+                }}
+              >
+                {producto.sku}
+              </Text>
             </View>
           </View>
         </View>
+        {/* ------------------- */}
 
+        {/* /*---------------------------------*/
+        /*Imagen Principal*/
+        /*---------------------------------*/}
         <View
           style={{
+            top: "0px",
             width: "100%",
-            // maxWidth: "1000px",
-            height: "100%",
-            // backgroundColor: "#04540",
-            position: "absolute",
-            display: `flex`,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+          }}
+        >
+          {producto.tipo === "calzado" ? (
+            <View
+              style={{
+                width: "100%",
+                height: "500px",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "flex-start",
+                transform: "translate(35px, 0px) rotate(30deg)",
+              }}
+            >
+              <Image
+                style={{
+                  transform: "scale(1.4, 1.4)",
+                }}
+                src={
+                  producto.imgcatalogomain
+                    ? urlForImage(producto.imgcatalogomain.asset._ref).url()
+                    : "http://via.placeholder.com/2000x2000"
+                }
+                // src={urlForImage(producto.imgcatalogomain.asset._ref).url()}
+              />
+            </View>
+          ) : (
+            <View
+              style={{
+                width: "100%",
+                height: "500px",
+                display: "flex",
+                marginTop: "17px",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "flex-start",
+              }}
+            >
+              <Image
+                src={
+                  producto.imgcatalogomain
+                    ? urlForImage(producto.imgcatalogomain.asset._ref).url()
+                    : "http://via.placeholder.com/2000x2000"
+                }
+              />
+            </View>
+          )}
+        </View>
+        {/* /*---------------------------------*/
+        /*Detalles y Precios*/
+        /*---------------------------------*/}
+        <View
+          style={{
+            top: "0px",
+            // position: "absolute",
+            width: "100%",
+
+            display: "flex",
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "center",
-            // bottom: "-280px",
-            bottom: `-100px`,
-
-            zIndex: "5",
           }}
         >
-          <Image
+          <View
             style={{
-              width: `400px`,
+              width: "100%",
+
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              alignItems: "center",
+              gap: "0px 5px",
             }}
-            src={
-              producto.img
-                ? urlForImage(producto.img).url()
-                : "http://via.placeholder.com/2000x2000"
+          >
+            {/* precios */}
+
+            <View
+              style={{
+                width: "80%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px 0px",
+                justifyContent: "space-around",
+              }}
+            >
+              {cliente ? (
+                <>
+                  <View
+                    style={{
+                      backgroundColor: "white",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text>Tallas:</Text>
+                    <Text>{producto.tallascatalogo}</Text>
+                  </View>
+                  <View
+                    style={{
+                      backgroundColor: "white",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text>S/..........</Text>
+                  </View>
+                </>
+              ) : (
+                <>
+                  <View
+                    style={{
+                      backgroundColor: "white",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text>Tallas:</Text>
+                    <Text>{producto.tallascatalogo}</Text>
+                  </View>
+                  <View
+                    style={{
+                      backgroundColor: "white",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text>Precio Retail</Text>
+                    <Text>
+                      S/
+                      {producto.priceecommerce &&
+                        producto.priceecommerce.toFixed(2)}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      backgroundColor: "white",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text>
+                      Precio {producto.tipoprecio ? "Emprendedor" : "Mayorista"}
+                    </Text>
+                    <Text>
+                      S/
+                      {producto.pricemayorista &&
+                        producto.pricemayorista.toFixed(2)}
+                    </Text>
+                  </View>
+                </>
+              )}
+            </View>
+            {/* Imagen  mid*/}
+            {producto.imagecatalogo !== null &&
+            producto.imagecatalogo[0] !== undefined &&
+            producto.imagecatalogo[0].asset !== undefined ? (
+              <View
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  // display: "flex",
+                  // flexDirection: "row",
+                  // justifyContent: "center",
+                  // alignItems: "center",
+                  // backgroundColor: "blue",
+                }}
+              >
+                <Image
+                  style={{
+                    borderRadius: "50%",
+                    border: "2px solid #fff",
+                  }}
+                  src={urlForImage(producto.imagecatalogo[0].asset._ref).url()}
+                />
+              </View>
+            ) : (
+              <View
+                style={{
+                  width: "100%",
+                  height: "220px",
+                  // display: "flex",
+                  // flexDirection: "row",
+                  // justifyContent: "center",
+                  // alignItems: "center",
+                  // backgroundColor: "blue",
+                }}
+              ></View>
+            )}
+
+            {/* Imagen  con Marca*/}
+
+            <View
+              style={{
+                width: "80%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                gap: "5px",
+                alignItems: "flex-end",
+              }}
+            >
+              {/* img  2 */}
+              {producto.imagecatalogo !== null &&
+                producto.imagecatalogo[1] !== undefined &&
+                producto.imagecatalogo[1].asset !== undefined && (
+                  <Image
+                    style={{
+                      height: "180px",
+                      borderRadius: "50%",
+                      border: "2px solid #fff",
+                    }}
+                    src={urlForImage(
+                      producto.imagecatalogo[1].asset._ref
+                    ).url()}
+                  />
+                )}
+              <View
+                style={{
+                  marginTop: "5px",
+                  width: "50%",
+                  backgroundColor: "black",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+
+                  // border: "2px solid #fff",
+                }}
+              >
+                {/* marca */}
+                {producto.marca && (
+                  <Image
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                    }}
+                    src={marca}
+                  />
+                )}
+              </View>
+            </View>
+          </View>
+        </View>
+
+        {/* /*---------------------------------*/
+        /*Footer*/
+        /*---------------------------------*/}
+      </View>
+      <View
+        style={{
+          // marginTop: "6px",
+          // position: "absolute",
+          width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          backgroundColor: "black",
+          color: "white",
+          letterSpacing: "2px",
+          padding: "3px",
+          fontSize: "10px",
+        }}
+      >
+        <View
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Text>FRITZSPORT.PE</Text>
+          <Text>
+            {producto.genero.toUpperCase()}-{producto.categoria.toUpperCase()}
+          </Text>
+          <Text
+            render={({ pageNumber, totalPages }) =>
+              `PAGINA ${pageNumber}/${totalPages}`
             }
           />
         </View>
-        {/* {producto.imagecatalogo && (
-          <View style={styles.imagensContainer}>
-            {producto.imagecatalogo.map((el) => (
-              <View key={el._key}>
-                <Image
-                  style={styles.imagenSub}
-                  src={el.asset ? urlForImage(el.asset._ref).url() : ""}
-                />
-              </View>
-            ))}
-          </View>
-        )} */}
-
-        <Image
-          style={{
-            height: "130px",
-          }}
-          src={
-            catalogo.imgfooter
-              ? urlForImage(catalogo.imgfooter.asset._ref).url()
-              : undefined
-          }
-        />
       </View>
 
-      <View style={styles.pageNumber}>
+      {/* <View style={styles.pageNumber}>
         <Text
           render={({ pageNumber, totalPages }) => `${pageNumber}/${totalPages}`}
         />
-      </View>
+      </View> */}
     </Page>
   );
 }

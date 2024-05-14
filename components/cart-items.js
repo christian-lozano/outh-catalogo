@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
 import { X } from "lucide-react";
 import { useCart } from "react-use-cart";
@@ -21,14 +20,34 @@ export function CartItems() {
   }, []);
 
   const { items, removeItem } = useCart();
+  const [buscador, setBuscador] = useState("");
+
+  const [resultados, setResultados] = useState([]);
+  useEffect(() => {
+    if (buscador.length != "") {
+      setResultados(items.filter((el) => el.products.sku === buscador));
+    } else {
+      setResultados(items);
+    }
+  }, [buscador]);
+
   return (
     <>
+      <div class="w-full">
+        <input
+          type="search"
+          class="w-full px-4 py-2 text-gray-800 border-[1px] border-black focus:outline-none"
+          placeholder="Buscar productos por SKU"
+          x-model="search"
+          onChange={(e) => setBuscador(e.target.value)}
+        />
+      </div>
       {clientState && (
         <>
-          {items.length === 0 && <CartItemsEmpty />}
+          {resultados.length === 0 && <CartItemsEmpty />}
 
           <div className="divide-y divide-gray-200 border-y border-gray-200 dark:divide-gray-500 dark:border-gray-500 grid grid-cols-2">
-            {items.slice(0, loadMore).map((el) => (
+            {resultados.slice(0, loadMore).map((el) => (
               <div key={"key"} className="flex py-6 sm:py-10 ">
                 <div className="shrink-0">
                   {/* <Image
@@ -39,10 +58,10 @@ export function CartItems() {
                 height={0}
                 className="h-24 w-24 rounded-md border-2 border-gray-200 object-cover object-center dark:border-gray-800 sm:h-48 sm:w-48"
               /> */}
-                  {el.image && (
+                  {el.products.images !== null && (
                     <img
                       className="h-24 w-24 rounded-md border-2 border-gray-200 object-cover object-center dark:border-gray-800 sm:h-48 sm:w-48"
-                      src={urlForImage(el.image).url()}
+                      src={urlForImage(el.products.images[0].asset._ref).url()}
                       width={150}
                       alt="Polaroid camera"
                     />
@@ -53,14 +72,15 @@ export function CartItems() {
                   <div className="relative justify-between pr-9 sm:flex sm:gap-x-6 sm:pr-0">
                     <div>
                       <div className="flex justify-between">
-                        <h3 className="text-sm">{el.name}</h3>
+                        <h3 className="text-sm">{el.products.name}</h3>
                       </div>
                       <div className="flex justify-between font-bold">
-                        <h4 className="text-sm">sku: {el.sku}</h4>
+                        <h4 className="text-sm">sku: {el.products.sku}</h4>
                       </div>
                       <p className="mt-1 text-sm font-extrabold">
                         Precio Retail: <br /> S/
-                        {el.price && el.price.toFixed(2)}
+                        {el.products.priceecommerce &&
+                          el.products.priceecommerce.toFixed(2)}
                       </p>
                       {el.tipoprecio === "emprendedor" ? (
                         <p className="mt-1 text-sm font-extrabold">
@@ -75,15 +95,16 @@ export function CartItems() {
                       )}
 
                       <p className="mt-1 text-sm font-medium">
-                        Categoria: {el.categorias ? el.categorias : ""}
+                        Categoria:
+                        {el.products.categories ? el.products.categories : ""}
                       </p>
                       <p className="mt-1 text-sm font-medium">
-                        Genero: {el.genero}
+                        Genero: {el.products.genero}
                       </p>
 
                       <p className="mt-1 text-sm font-medium">
                         Talla: {/* @ts-ignore */}
-                        <strong>{el.tallas}</strong>
+                        <strong>{el.products.tallascatalogo}</strong>
                       </p>
                     </div>
 
@@ -110,14 +131,12 @@ export function CartItems() {
                       </div>
                     </div>
                   </div>
-
                   {/* <p className="mt-4 flex space-x-2 text-sm">
                   <Clock className="h-5 w-5 shrink-0" aria-hidden="true" />
                   <span>Se envía en 1 semana</span>
                 </p> */}
                   <p className="mt-4 flex space-x-2 text-sm">
-                    {/* <Clock className="h-5 w-5 shrink-0" aria-hidden="true" /> */}
-                    <span>Precio total: S/{el.itemTotal.toFixed(2)} </span>
+                    {/* <span>Precio total: S/{el.itemTotal.toFixed(2)} </span> */}
                   </p>
                 </div>
               </div>
@@ -126,7 +145,7 @@ export function CartItems() {
         </>
       )}
       <div className="flex justify-center">
-        {loadMore < items?.length ? (
+        {loadMore < resultados?.length ? (
           <button
             type="button"
             className="group relative overflow-hidden rounded-lg bg-black px-2 py-3 text-sm md:text-base mt-5"
@@ -148,7 +167,7 @@ export function CartItems() {
       </div>
       {clientState && (
         <div className="mt-5 flex justify-center">
-          {loadMore} de {items?.length} Productos
+          {loadMore} de {resultados?.length} Productos
         </div>
       )}
     </>

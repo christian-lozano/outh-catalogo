@@ -48,20 +48,8 @@ export const catalogo = defineType({
               validation: (rule) => rule.required(),
             },
             {
-              title: "Imagen Header Catalogo(png,webp)",
-              name: "imgheader",
-              type: "image",
-              validation: (rule) => rule.required(),
-            },
-            {
-              title: "Imagen Footer Catalogo(png,webp)",
-              name: "imgfooter",
-              type: "image",
-              validation: (rule) => rule.required(),
-            },
-            {
-              title: "Imagen Price Catalogo(png,webp)",
-              name: "imgprice",
+              title: "Imagen Fondo Producto(png,webp)",
+              name: "imgfondo",
               type: "image",
               validation: (rule) => rule.required(),
             },
